@@ -32,7 +32,7 @@ class CountriesViewModel : ViewModel() {
     }
 
     fun fetchData() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             val result = repository.getCountries()
             println("This is the error: ${result.getOrNull()}")
             when (result.getOrNull()) {
